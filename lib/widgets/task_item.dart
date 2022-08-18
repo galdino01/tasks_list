@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:intl/intl.dart';
 
 import 'package:tasks_list/models/task.dart';
 
@@ -68,7 +69,8 @@ class _TaskItemState extends State<TaskItem> {
                           fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      widget.task.dateNow.toString(),
+                      DateFormat('dd/MM/yyyy - HH:m')
+                          .format(widget.task.dateNow),
                       style: const TextStyle(
                           fontSize: 12, fontWeight: FontWeight.w400),
                     ),
